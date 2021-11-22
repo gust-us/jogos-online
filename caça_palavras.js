@@ -40,13 +40,12 @@ function preenchaLetras (arr){
 //função que coloca as palavras de forma aleatória no array.
 
 function escolhePalavras (){
-    let lincon = getRandom(1,1);
     let arr = arrPalavras();
-    switch (lincon) {
-
-        case 1:
-            let i = 0;
-            while(i<3){
+    let i=0;
+    while(i<3){
+        let lincon = getRandom(2,1);
+        switch (lincon) {
+            case 1:
                 let linha = getRandom(10,0);
                 let count = 0;
                 for(let j=0;j<10;j++){
@@ -66,13 +65,31 @@ function escolhePalavras (){
                     }
                     i++;
                 }
-            }
-        break;
+                
+            break;
 
-        case 2:
-
-        break;
+            case 2:
+               let coluna = getRandom(10,0);
+               let contador = 0;
+               for(let j=0;j<10;j++){
+                   if(arr[j][coluna]===undefined){
+                       contador++;
+                   }
+               }
+               if(contador===10){
+                   let palavrinha2 = getRandom(tamanhoPalavras,0);
+                   let tamPalavra2 = palavras[palavrinha2].length;
+                   let arrDaPalavra2 = palavras[palavrinha2].split('');
+                   let podeIrAte2 = 10 - tamPalavra2;
+                   let inicio2 = getRandom(podeIrAte2,0);
+                   for(let j=0;j<tamPalavra2;j++){
+                       arr[inicio2][coluna]=arrDaPalavra2[j];
+                       inicio2++;
+                   }
+                   i++;
+               }
+            break;
+        }
     }
-
     return preenchaLetras(arr);
 }
