@@ -14,8 +14,8 @@ const tamanhoLetras = letras.length;
 
 
 // funcão que escolhe aleatóriamente as letras.
-function getRandom() {
-    return Math.floor(Math.random() * tamanhoLetras) + 0;
+function getRandom(number,min) {
+    return Math.floor(Math.random() * number) + min;
 }
 
 //array contendo as palavras que serão usadas no caça-palavras
@@ -25,12 +25,11 @@ const tamanhoPalavras = palavras.length;
 
 // função que preenche os lugares vazios do array bidimensional com letras aleatórias.
 
-function preenchaLetras (){
-    let arr = arrPalavras();
+function preenchaLetras (arr){
     for(let i=0; i<10;i++){
         for(let j=0; j<10;j++){
             if(arr[i][j]===undefined){
-                arr[i][j] = letras[getRandom()];
+                arr[i][j] = letras[getRandom(tamanhoLetras,0)];
             }
         }
     }
@@ -41,4 +40,39 @@ function preenchaLetras (){
 //função que coloca as palavras de forma aleatória no array.
 
 function escolhePalavras (){
+    let lincon = getRandom(1,1);
+    let arr = arrPalavras();
+    switch (lincon) {
+
+        case 1:
+            let i = 0;
+            while(i<3){
+                let linha = getRandom(10,0);
+                let count = 0;
+                for(let j=0;j<10;j++){
+                    if(arr[linha][j]===undefined){
+                        count ++;
+                    }
+                }
+                if(count===10){
+                    let palavrinha = getRandom(tamanhoPalavras,0);
+                    let tamPalavra = palavras[palavrinha].length;
+                    let arrDaPalavra = palavras[palavrinha].split('');
+                    let podeIrAte = 10 - tamPalavra;
+                    let inicio = getRandom(podeIrAte,0);
+                    for(let j=0;j<tamPalavra;j++){
+                        arr[linha][inicio]=arrDaPalavra[j];
+                        inicio++;
+                    }
+                    i++;
+                }
+            }
+        break;
+
+        case 2:
+
+        break;
+    }
+
+    return preenchaLetras(arr);
 }
