@@ -19,7 +19,7 @@ function getRandom(number,min) {
 }
 
 //array contendo as palavras que serão usadas no caça-palavras
-const palavras = ['água','arroz','alho','oleo','cebola','sal'];
+const palavras = ['água','arroz','alho','oleo','cebola','sal','cachorro','gato','peixe','cavalo','vaca','carro','moto','onibus','casa','predio','cadeira','mesa','papel','radio'];
 const tamanhoPalavras = palavras.length;
 
 
