@@ -91,5 +91,7 @@ function escolhePalavras (){
             break;
         }
     }
-    return preenchaLetras(arr);
+    let result = preenchaLetras(arr);
+    console.table(result);
+    return result;
 }
