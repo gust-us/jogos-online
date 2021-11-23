@@ -19,7 +19,7 @@ function getRandom(number,min) {
 }
 
 //array contendo as palavras que serão usadas no caça-palavras
-const palavras = ['água','arroz','alho','oleo','cebola','sal','cachorro','gato','peixe','cavalo','vaca','carro','moto','onibus','casa','predio','cadeira','mesa','papel','radio'];
+const palavras = ['silco','vander','singed','marcus','powder','ekko','mylo','caitlyn','jayce','viktor','sevika','mel','jinx','violet','claggor','benzo','grayson','vern','deckard','ambessa'];
 const tamanhoPalavras = palavras.length;
 
 
@@ -95,3 +95,26 @@ function escolhePalavras (){
     console.table(result);
     return result;
 }
+
+//função que coloca o caça-palavras na tela html.
+
+const putOnPage = () => {
+    const game = document.getElementById('jogo');
+    const table = escolhePalavras();
+    for(let i=0; i<table.length;i++){
+        const lines = document.createElement('tr');
+        game.appendChild(lines);
+        for(let j=0;j<table.length;j++){
+            const squares = document.createElement('td');
+            let letters = document.createTextNode(table[i][j]);
+            squares.appendChild(letters);
+            lines.appendChild(squares);
+            squares.style.border = "1px solid black";
+            squares.style.padding = "3px";
+        }
+    }
+
+}
+
+
+putOnPage();
