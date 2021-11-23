@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./assets/reset.css"> -->
+    <link rel="stylesheet" href="./assets/jokenpo_style.css">
+    <title>Jokenpo</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="cabecalho">
+                <h2>Jokenpo</h2>
+            </div>
+        </header>
+        <main>
+            <div>
+                <section class="conteudo" id="conteudo">
+                    <p><strong>Faça sua escolha</strong></p>
+                    <div class="figure" class="jogador">
+                        <img id="jogador_escolha-1" onclick="jogar(1)" src="assets/img/pedra.png" alt="pedra">
+                        <img id="jogador_escolha-2" onclick="jogar(2)" src="assets/img/papel.png" alt="papel">
+                        <img id="jogador_escolha-3" onclick="jogar(3)" src="assets/img/tesoura.png" alt="tesoura">
+                    </div>
+                    <div>
+                        <img class="vs" src="assets/img/versus.jpg" alt="versus">
+                    </div>
+                    <p><strong>Computador</strong></p>
+                    <div class="figure" class="computador">
+                        <img id="computador_escolha-1" src="assets/img/pedra.png" alt="pedra">
+                        <img id="computador_escolha-2" src="assets/img/papel.png" alt="papel">
+                        <img id="computador_escolha-3" src="assets/img/tesoura.png" alt="tesoura">
+                    </div>
+                </section>   
+            </div> 
+                <section class="resultado">
+                    <h2>Resultado</h2>
+                    <div id="result"></div>
+                    <button class="btn">Jogar novamente</button>
+                </section>
+        </main>     
+    </div>
+    <script src="jokenpo.js"></script>
+</body>
+</html>
