@@ -19,7 +19,9 @@ function getRandom(number,min) {
 }
 
 //array contendo as palavras que serão usadas no caça-palavras
-const palavras = ['silco','vander','singed','marcus','powder','ekko','mylo','caitlyn','jayce','viktor','sevika','mel','jinx','violet','claggor','benzo','grayson','vern','deckard','ambessa'];
+
+const palavras = ['silco','vander','singed','marcus','powder','ekko','mylo','caitlyn','jayce','viktor','sevika','mel','jinx','violet','claggor','benzo','grayson','orianna','deckard','ambessa'];
+
 const tamanhoPalavras = palavras.length;
 
 
@@ -39,6 +41,9 @@ function preenchaLetras (arr){
 let chosenWords = [];
 let sizeOfChosenWords = [];
 let lineOfWords = [];
+
+let chosen = [];
+
 
 
 //função que coloca as palavras de forma aleatória no array.
@@ -60,6 +65,9 @@ function escolhePalavras (){
                 if(count===10){
                     let palavrinha = getRandom(tamanhoPalavras,0);
                     let tamPalavra = palavras[palavrinha].length;
+
+                    chosen.push(palavras[palavrinha]);
+
                     chosenWords.push(linha);
                     sizeOfChosenWords.push(tamPalavra);
                     let arrDaPalavra = palavras[palavrinha].split('');
@@ -88,6 +96,9 @@ function escolhePalavras (){
                if(contador===10){
                    let palavrinha2 = getRandom(tamanhoPalavras,0);
                    let tamPalavra2 = palavras[palavrinha2].length;
+
+                   chosen.push(palavras[palavrinha2]);
+
                    chosenWords.push(coluna + 10);
                    sizeOfChosenWords.push(tamPalavra2);
                    let arrDaPalavra2 = palavras[palavrinha2].split('');
@@ -104,16 +115,11 @@ function escolhePalavras (){
         }
     }
     let result = preenchaLetras(arr);
+
+    console.table(result);
     return result;
 }
 
-//função que coloca as classes isoladas nas palavras selecionadas
-
-const classInWords = () => {
-
-
-
-}
 
 
 
@@ -130,15 +136,19 @@ const putOnPage = () => {
         game.appendChild(lines);
         for(let j=0;j<table.length;j++){
             const squares = document.createElement('td');
-            let letters = document.createTextNode(table[i][j].toUpperCase());
+
+            let letters = document.createTextNode(table[i][j]);
+
             squares.setAttribute('line',i);
             squares.setAttribute('column',j);
             squares.appendChild(letters);
             lines.appendChild(squares);
             squares.style.border = "1px solid black";
-            squares.style.padding = "20px";
-            squares.style.fontSize = "20px"
+
+            squares.style.padding = "3px";
         }
+
+
     }
 }
 
