@@ -37,6 +37,9 @@ function preenchaLetras (arr){
 }
 
 let chosenWords = [];
+let sizeOfChosenWords = [];
+let lineOfWords = [];
+
 
 //função que coloca as palavras de forma aleatória no array.
 
@@ -56,14 +59,18 @@ function escolhePalavras (){
                 }
                 if(count===10){
                     let palavrinha = getRandom(tamanhoPalavras,0);
-                    chosenWords.push(palavras[palavrinha]);
                     let tamPalavra = palavras[palavrinha].length;
+                    chosenWords.push(linha);
+                    sizeOfChosenWords.push(tamPalavra);
                     let arrDaPalavra = palavras[palavrinha].split('');
                     let podeIrAte = 10 - tamPalavra;
                     let inicio = getRandom(podeIrAte,0);
                     for(let j=0;j<tamPalavra;j++){
                         arr[linha][inicio]=arrDaPalavra[j];
+                        lineOfWords.push(inicio);
                         inicio++;
+                        
+                        
                     }
                     i++;
                 }
@@ -80,13 +87,15 @@ function escolhePalavras (){
                }
                if(contador===10){
                    let palavrinha2 = getRandom(tamanhoPalavras,0);
-                   chosenWords.push(palavras[palavrinha2]);
                    let tamPalavra2 = palavras[palavrinha2].length;
+                   chosenWords.push(coluna + 10);
+                   sizeOfChosenWords.push(tamPalavra2);
                    let arrDaPalavra2 = palavras[palavrinha2].split('');
                    let podeIrAte2 = 10 - tamPalavra2;
                    let inicio2 = getRandom(podeIrAte2,0);
                    for(let j=0;j<tamPalavra2;j++){
                        arr[inicio2][coluna]=arrDaPalavra2[j];
+                       lineOfWords.push(inicio2);
                        inicio2++;
                    }
                    i++;
@@ -98,52 +107,13 @@ function escolhePalavras (){
     return result;
 }
 
+//função que coloca as classes isoladas nas palavras selecionadas
 
-const victory= (arr) => {
-    let deuCerto = [];
-    let testando = [];
-    for(let i=0; i<=2; i++){
-        switch (i){
-            case 0 :
-                let compair = chosenWords[i].split('');
-                console.log(chosenWords[i]);
-                let x = 0;
-                for(let j=0;j<arr.length;j++){
-                    for(let h = 0;h<arr.length;h++){
-                        if(compair[x]===arr[j][h]){
-                            if(compair[x+1]===arr[j][h+1]){
-                                x++;
-                                testando[0]=j
-                                testando.push(h);
-                            }
-                        }
-                    }
-                }
-                if(x===(compair.length-1)){
-                    deuCerto.push(true);
-                    break;
-                }
-                // else{
-                //     x = 0;
-                //     for(let j=0;j<arr.length;j++){
-                //         for(let h=0;h<arr.length;h++){
-                //             if(compair[x]===arr[h][j]){
-                //                 if(compair[x+1]===arr[h+1][j]){
-                                    
-                //                     x++;
-                //                 }
-                //             }
-                //         }
-                //     }
-                //     deuCerto.push(true);
-                // }
-            break;
-        }
-    }
-    console.log(testando);
-    return deuCerto;
+const classInWords = () => {
+
+
+
 }
-
 
 
 
@@ -155,21 +125,20 @@ const victory= (arr) => {
 const putOnPage = () => {
     const game = document.getElementById('jogo');
     const table = escolhePalavras();
-    let vitoria = victory(table);
-    console.log(vitoria);
     for(let i=0; i<table.length;i++){
         const lines = document.createElement('tr');
         game.appendChild(lines);
         for(let j=0;j<table.length;j++){
             const squares = document.createElement('td');
             let letters = document.createTextNode(table[i][j]);
+            squares.setAttribute('line',i);
+            squares.setAttribute('column',j);
             squares.appendChild(letters);
             lines.appendChild(squares);
             squares.style.border = "1px solid black";
             squares.style.padding = "3px";
         }
     }
-
 }
 
 
