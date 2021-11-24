@@ -50,7 +50,7 @@
 }
 
 body {
-    background-image: url("images/arcane-3.png");
+    background-image: url("/assets/imgs_index/arcane-3.png");
     background-size: 150%;
 }
 
@@ -63,7 +63,7 @@ body {
 }
 
 body {
-    background-image: url("images/desktop-background.png");
+    background-image: url("/assets/imgs_index/desktop-background.png");
     background-position: initial;
     background-size: 100%;
     background-repeat: no-repeat;

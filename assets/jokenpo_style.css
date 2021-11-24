@@ -1,5 +1,5 @@
 body{
-    background-image: url("../assets/imgs_jokenpo/fundo.jpg");      
+    background-image: url("/assets/imgs_jokenpo/fundo.jpg");      
 } 
 :root{
     --cor-padrao: rgb(30, 31, 95);

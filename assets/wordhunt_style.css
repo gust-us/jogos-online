@@ -23,8 +23,6 @@ main{
     font-family: "Outfit";
     margin-top: 5%;
     margin-bottom: 10%;
-    
-
 }
 
 .rules h2 {
@@ -44,14 +42,42 @@ main{
 }
 
 body {
-    background-image: url("imgs/background-hunting-mobile.png.png");
+    background-image: url("/assets/imgs_wordhunt/background-hunting-mobile.png.png");
     background-size: 150%;
+}
+
+.square{
+    padding: 10px;
+    border: 1px solid black;
+    font-family: "Outfit";
+    font-size: 20px;
+}
+
+.square--clicked{
+    background-color: rgba(14, 34, 114, 0.52);
+}
+
+.h2--victory{
+    font-family: "Outfit";
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button--reset{
+    font-family: "Outfit";
+    border: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(2, 7, 27, 0.860);
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 768px){
 
 body {
-    background-image: url("imgs/background-hunting-desktop.png");
+    background-image: url("/assets/imgs_wordhunt/background-hunting-desktop.png");
     background-position: center;
     background-size: fill;
     background-repeat: no-repeat;
@@ -104,7 +130,7 @@ body {
 
 @media only screen and (min-width: 800px){
     body {
-        background-image: url("imgs/background-hunting-desktop.png");
+        background-image: url("/assets/imgs_wordhunt/background-hunting-desktop.png");
         background-position:initial;
         background-size: cover;
         background-repeat: no-repeat;
