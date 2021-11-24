@@ -39,6 +39,7 @@ function preenchaLetras (arr){
 let chosenWords = [];
 let sizeOfChosenWords = [];
 let lineOfWords = [];
+let chosen = [];
 
 
 //função que coloca as palavras de forma aleatória no array.
@@ -60,6 +61,7 @@ function escolhePalavras (){
                 if(count===10){
                     let palavrinha = getRandom(tamanhoPalavras,0);
                     let tamPalavra = palavras[palavrinha].length;
+                    chosen.push(palavras[palavrinha]);
                     chosenWords.push(linha);
                     sizeOfChosenWords.push(tamPalavra);
                     let arrDaPalavra = palavras[palavrinha].split('');
@@ -88,6 +90,7 @@ function escolhePalavras (){
                if(contador===10){
                    let palavrinha2 = getRandom(tamanhoPalavras,0);
                    let tamPalavra2 = palavras[palavrinha2].length;
+                   chosen.push(palavras[palavrinha2]);
                    chosenWords.push(coluna + 10);
                    sizeOfChosenWords.push(tamPalavra2);
                    let arrDaPalavra2 = palavras[palavrinha2].split('');
@@ -104,15 +107,8 @@ function escolhePalavras (){
         }
     }
     let result = preenchaLetras(arr);
+    console.table(result);
     return result;
-}
-
-//função que coloca as classes isoladas nas palavras selecionadas
-
-const classInWords = () => {
-
-
-
 }
 
 
@@ -138,6 +134,7 @@ const putOnPage = () => {
             squares.style.border = "1px solid black";
             squares.style.padding = "3px";
         }
+
     }
 }
 
