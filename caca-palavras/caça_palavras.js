@@ -19,7 +19,7 @@ function getRandom(number, min) {
 }
 
 //array contendo as palavras que serão usadas no caça-palavras
-const palavras = ['silco','vander','singed','marcus','powder','ekko','mylo','caitlyn','jayce','viktor','sevika','mel','jinx','violet','claggor','benzo','grayson','vern','deckard','ambessa'];
+const palavras = ['silco', 'vander', 'singed', 'marcus', 'powder', 'ekko', 'mylo', 'caitlyn', 'jayce', 'viktor', 'sevika', 'mel', 'jinx', 'violet', 'claggor', 'benzo', 'grayson', 'vern', 'deckard', 'ambessa'];
 const tamanhoPalavras = palavras.length;
 
 
@@ -36,6 +36,7 @@ function preenchaLetras(arr) {
     return arr;
 }
 
+let chosenWords = [];
 
 //função que coloca as palavras de forma aleatória no array.
 
@@ -55,6 +56,7 @@ function escolhePalavras() {
                 }
                 if (count === 10) {
                     let palavrinha = getRandom(tamanhoPalavras, 0);
+                    chosenWords.push(palavras[palavrinha]);
                     let tamPalavra = palavras[palavrinha].length;
                     let arrDaPalavra = palavras[palavrinha].split('');
                     let podeIrAte = 10 - tamPalavra;
@@ -78,6 +80,7 @@ function escolhePalavras() {
                 }
                 if (contador === 10) {
                     let palavrinha2 = getRandom(tamanhoPalavras, 0);
+                    chosenWords.push(palavras[palavrinha2]);
                     let tamPalavra2 = palavras[palavrinha2].length;
                     let arrDaPalavra2 = palavras[palavrinha2].split('');
                     let podeIrAte2 = 10 - tamPalavra2;
@@ -95,15 +98,69 @@ function escolhePalavras() {
     return result;
 }
 
+
+const victory = (arr) => {
+    let deuCerto = [];
+    let testando = [];
+    for (let i = 0; i <= 2; i++) {
+        switch (i) {
+            case 0:
+                let compair = chosenWords[i].split('');
+                console.log(chosenWords[i]);
+                let x = 0;
+                for (let j = 0; j < arr.length; j++) {
+                    for (let h = 0; h < arr.length; h++) {
+                        if (compair[x] === arr[j][h]) {
+                            if (compair[x + 1] === arr[j][h + 1]) {
+                                x++;
+                                testando[0] = j
+                                testando.push(h);
+                            }
+                        }
+                    }
+                }
+                if (x === (compair.length - 1)) {
+                    deuCerto.push(true);
+                    break;
+                }
+                // else{
+                //     x = 0;
+                //     for(let j=0;j<arr.length;j++){
+                //         for(let h=0;h<arr.length;h++){
+                //             if(compair[x]===arr[h][j]){
+                //                 if(compair[x+1]===arr[h+1][j]){
+
+                //                     x++;
+                //                 }
+                //             }
+                //         }
+                //     }
+                //     deuCerto.push(true);
+                // }
+                break;
+        }
+    }
+    console.log(testando);
+    return deuCerto;
+}
+
+
+
+
+
+
+
 //função que coloca o caça-palavras na tela html.
 
 const putOnPage = () => {
     const game = document.getElementById('jogo');
     const table = escolhePalavras();
-    for(let i=0; i<table.length;i++){
+    let vitoria = victory(table);
+    console.log(vitoria);
+    for (let i = 0; i < table.length; i++) {
         const lines = document.createElement('tr');
         game.appendChild(lines);
-        for(let j=0;j<table.length;j++){
+        for (let j = 0; j < table.length; j++) {
             const squares = document.createElement('td');
             let letters = document.createTextNode(table[i][j].toUpperCase());
             squares.appendChild(letters);
@@ -115,4 +172,8 @@ const putOnPage = () => {
     }
 
 }
-putOnPage()
+
+
+putOnPage();
+
+
