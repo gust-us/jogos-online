@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="/assets/reset.css">
+    <link rel="stylesheet" href="/assets/wordhunt_style.css">
     <title>Caça-Palavras</title>
 </head>
 <body>
-    <header>
+    <header class="headline">
         <h1>CAÇA-PALAVRAS Arcane</h1>
     </header>
     <main>
-        <article>
+        <article class="rules">
             <h2>Regras</h2>
             <p>
-                O jogo de caça-palavras é um passatempo que consiste de letras arranjadas aparentemente aleatórias em uma grade quadrada.
-                O objetivo do jogo é encontrar as palavras escondidas na grade tão rapidamente quanto possível.
+                Encontre as palavras escondidas tão rapidamente quanto possível.
                 As palavras podem estar escondidas verticalmente ou horizontalmente, e são arranjadas de 
                 modo que possam ser lidas da esquerda para a direita ou de cima para baixo.
+            </p>
+            <p class="detail">
+                P.S. Vire a tela para jogar. Valendo!
             </p>
         </article>
         
         <table id="jogo"></table>
     </main>
-
-    <script src="caça_palavras.js"></script>
+    <script src="/caça_palavras.js"></script>
 </body>
 </html>
