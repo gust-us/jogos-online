@@ -26,5 +26,21 @@ function jogar(escolha) {
         ganhador = 0              
     }
     
+    document.getElementById("jogador_escolha-" + jogadorEscolha).classList.add('selecionado');
+    document.getElementById("computador_escolha-" + computadorEscolha).classList.add('selecionado');
 
-};
+    if(ganhador == 0) {
+        document.getElementById('result').innerHTML = 'Empate';
+    } else if(ganhador == 1) {
+        document.getElementById('result').innerHTML = 'Jogador ganhou';
+    } else if(ganhador == 2) {
+        document.getElementById('result').innerHTML = 'Computador ganhou';
+    }
+    
+}
+
+const button = document.getElementsByClassName("btn")[0]
+button.addEventListener("click", function() {
+   return location.reload();
+   
+});
