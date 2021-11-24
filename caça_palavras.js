@@ -19,7 +19,7 @@ function getRandom(number,min) {
 }
 
 //array contendo as palavras que serão usadas no caça-palavras
-const palavras = ['silco','vander','singed','marcus','powder','ekko','mylo','caitlyn','jayce','viktor','sevika','mel','jinx','violet','claggor','benzo','grayson','vern','deckard','ambessa'];
+const palavras = ['silco','vander','singed','marcus','powder','ekko','mylo','caitlyn','jayce','viktor','sevika','mel','jinx','violet','claggor','benzo','grayson','orianna','deckard','ambessa'];
 const tamanhoPalavras = palavras.length;
 
 
