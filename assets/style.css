@@ -3,14 +3,14 @@
 
 .headline {
     font-family: "Outfit";
-    font-size: 36px;
+    font-size: 40px;
     margin-top: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 14%;
     color: whitesmoke;
     text-shadow: -3px 0 10px rgba(2, 7, 27), -2px 0 5px rgba(2, 7, 27);
     padding: 2% ;
     border-radius: 5%;
-    width: 70%;
+    width: 90%;
     text-align: center;
     
 
@@ -20,12 +20,12 @@
     font-family: "Outfit";
     font-size: 28px;
     text-decoration: none;
-    padding: 30% 20%;
+    padding: 30% 10%;
     background-color: rgba(2, 7, 27, 0.920);
     color: whitesmoke;
     text-shadow: -3px 0 10px rgba(2, 7, 27), -2px 0 5px rgba(2, 7, 27);
     border-radius: 10%;
-    width: 40%;
+    width: 60%;
     text-align: center;
 }
 
@@ -33,12 +33,12 @@
     font-family: "Outfit";
     font-size: 28px;
     text-decoration: none;
-    padding: 30% 20%;
+    padding: 30% 10%;
     background-color: rgba(2, 7, 27, 0.920);
     color: whitesmoke;
     text-shadow: -3px 0 10px rgba(2, 7, 27), -2px 0 5px rgba(2, 7, 27);
     border-radius: 10%;
-    width: 40%;
+    width: 60%;
     text-align: center;
 }
 
@@ -56,4 +56,46 @@ body {
 
 @media only screen and (min-width: 768px){
     
+.main{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body {
+    background-image: url("images/desktop-background.png");
+    background-position: initial;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.headline {
+    font-size: 64px;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    width: 100%;
+}
+
+.jokenpo_btn {
+    padding: 5% 0%;
+    width: 20%;
+    margin-right: 10%;
+    background-color: rgba(2, 7, 27, 0.820);
+}
+
+.hunting_words_btn {
+    padding: 5% 0%;
+    width: 20%;
+    background-color: rgba(2, 7, 27, 0.820)
+    
+}
+
+.jokenpo_btn:hover{
+    background-color: rgba(2, 8, 31);
+}
+
+.hunting_words_btn:hover{
+    background-color: rgb(2, 8, 31);
+}
+
 }
