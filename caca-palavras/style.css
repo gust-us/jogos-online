@@ -98,6 +98,17 @@ body {
     margin-bottom: 4%;
 }
 
+#jogo td:hover{
+    background-color: rgba(14, 34, 114, 0.52)
+}
 
+@media only screen and (min-width: 800px){
+    body {
+        background-image: url("imgs/background-hunting-desktop.png");
+        background-position:initial;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
 
 }
