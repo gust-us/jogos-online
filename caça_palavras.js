@@ -160,13 +160,13 @@ htmlTable.addEventListener("click", function (event) {
     if (counter === 3) {
         let h2Victory = document.createElement("h2")
         h2Victory.classList.add("h2--victory")
-        h2Victory.innerHTML = `Parabéns! Você encontrou as três palavras: ${chosen[0]}, ${chosen[1]} e ${chosen[2]}`
+        h2Victory.innerHTML = `Parabéns! Você encontrou as três palavras: ${(chosen.map(item => item.replace(item[0], item[0].toUpperCase()))).join(", ")}.`
         let resetButton = document.createElement("button")
         resetButton.classList.add("button--reset")
         resetButton.innerHTML = "Jogue novamente"
         divVictory.appendChild(h2Victory)
         divVictory.appendChild(resetButton)
-        resetButton.addEventListener("click", function() {
+        resetButton.addEventListener("click", function () {
             return location.reload()
         })
     }
