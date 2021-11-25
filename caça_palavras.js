@@ -138,6 +138,20 @@ const putOnPage = () => {
 }
 putOnPage();
 
+function addWordsList() {
+    const divList = document.querySelector(".words--list")
+    const uList = document.querySelector(".u--list")
+    let palavras2 = palavras.map(item => item.replace(item[0], item[0].toUpperCase()))
+    for (let i = 0; i < palavras2.length; i++) {
+        let listItem = document.createElement("li")
+        listItem.classList.add("list--item")
+        listItem.innerHTML = (palavras2[i])
+        uList.appendChild(listItem)
+    }
+    divList.appendChild(uList)
+}
+addWordsList()
+
 const htmlTable = document.getElementById("jogo")
 let concatenedStr = ""
 let counter = 0
